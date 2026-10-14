@@ -11,11 +11,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2105c67117bf439e99b32b3a31701e5e, type: 3}
   m_Name: MouthsVisuals
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualGroupsDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualGroupsDataSO
   Name: Mouths
   IsSubGroup: 0
   VisualList:
-  - {fileID: 11400000, guid: 85b0e62d5ce7ae74189adbcedd1faaa8, type: 2}
-  - {fileID: 11400000, guid: ca8a4f202fb2863468e8ae96336ec230, type: 2}
-  - {fileID: 11400000, guid: 66fcae9207f146d479664c18144c8221, type: 2}
+  - {fileID: 11400000, guid: 003fc8f785ff4db79363c7eb171f3007, type: 2}
+  - {fileID: 11400000, guid: cf3e41d5e84d4ecd81d9921d2a302e1d, type: 2}
+  - {fileID: 11400000, guid: fc65e14916fd4253bfa0fd1792534f3d, type: 2}
   VisualType: 1

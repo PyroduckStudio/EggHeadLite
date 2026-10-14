@@ -62,6 +62,74 @@ namespace com.pyroduck.eggheadslite.Tests.Editor
         }
 
         [Test]
+        public void ProductIdentity_HidesEverySelfCampaignButKeepsOtherProducts()
+        {
+            var settings = ScriptableObject.CreateInstance<PyroDuckCampaignSettings>();
+            try
+            {
+                settings.currentProductId = "eggheads-full";
+                settings.currentProductAliases = new[] { "old-full-name" };
+                var self = Card("sale"); self.productId = " EGGHEADS-FULL ";
+                var alias = Card("launch"); alias.productId = "old-full-name";
+                var lite = Card("lite"); lite.productId = "eggheads-lite";
+                var other = Card("another-project"); other.productId = "duck-game";
+                var catalog = new CampaignCatalog { enabled = true, campaigns = new[] { self, alias, lite, other } };
+                Assert.AreEqual(2, catalog.GetActive(Now, settings).Count);
+                settings.currentProductId = "eggheads-lite";
+                settings.currentProductAliases = Array.Empty<string>();
+                Assert.AreEqual(3, catalog.GetActive(Now, settings).Count);
+                Assert.Contains(self, catalog.GetActive(Now, settings));
+            }
+            finally { UnityEngine.Object.DestroyImmediate(settings); }
+        }
+
+        [Test]
+        public void LegacyFeed_MatchesProductLinkDespiteTrackingAndChangedStoreSlug()
+        {
+            var settings = ScriptableObject.CreateInstance<PyroDuckCampaignSettings>();
+            try
+            {
+                settings.currentProductUrls = new[] { "https://assetstore.unity.com/packages/2d/characters/egg-heads-2d-364008" };
+                var legacy = Card("old-campaign");
+                legacy.targetUrl = "https://assetstore.unity.com/packages/2d/characters/new-name-364008/?utm_source=lite#details";
+                Assert.IsTrue(settings.IsCurrentProduct(legacy));
+                legacy.targetUrl = "https://assetstore.unity.com/packages/2d/characters/new-name-364009";
+                Assert.IsFalse(settings.IsCurrentProduct(legacy));
+                settings.currentProductUrls = new[] { "https://pyroduck.com/products/duck" };
+                legacy.targetUrl = "https://pyroduck.com/products/duck/?ref=setup";
+                Assert.IsTrue(settings.IsCurrentProduct(legacy));
+            }
+            finally { UnityEngine.Object.DestroyImmediate(settings); }
+        }
+
+        [Test]
+        public void BothWindows_HideSelfPromotionFromOfflineFallback()
+        {
+            var settings = AssetDatabase.LoadAssetAtPath<PyroDuckCampaignSettings>(
+                "Assets/PyroDuck/EggHeadsLite/Editor/PyroDuck/AboutUs/PyroDuckCampaignSettings.asset");
+            string originalId = settings.currentProductId, originalFeed = settings.feedUrl;
+            var about = ScriptableObject.CreateInstance<PyroDuckAboutWindow>();
+            var setup = ScriptableObject.CreateInstance<EggHeadsLiteSetupWindow>();
+            try
+            {
+                settings.currentProductId = "eggheads-full";
+                settings.feedUrl = "";
+                about.CreateGUI();
+                setup.CreateGUI();
+                Assert.AreEqual(DisplayStyle.None, about.rootVisualElement.Q("campaign-card").style.display.value);
+                Assert.IsTrue(setup.rootVisualElement.Q("campaign-card").ClassListContains("setup-hidden"));
+                Assert.IsNotNull(setup.rootVisualElement.Q<Button>("generator"));
+            }
+            finally
+            {
+                settings.currentProductId = originalId;
+                settings.feedUrl = originalFeed;
+                UnityEngine.Object.DestroyImmediate(about);
+                UnityEngine.Object.DestroyImmediate(setup);
+            }
+        }
+
+        [Test]
         public void Service_UnconfiguredFeedUsesBundledCatalogAndDisposesTwice()
         {
             var fallback = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/PyroDuck/EggHeadsLite/Editor/PyroDuck/AboutUs/campaigns.json");

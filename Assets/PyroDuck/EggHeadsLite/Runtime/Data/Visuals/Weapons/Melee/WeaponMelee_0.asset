@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9593ec4516de9fc4b818153fb7be61d9, type: 3}
   m_Name: WeaponMelee_0
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualDataSO
   Name: WeaponMelee_0
   BodyPartPrefab: {fileID: 4515325957867089684, guid: 0d6f03b4cf296ad409e89510b27b0440, type: 3}
   IconSprite: {fileID: -2682710854697673661, guid: 1353fbb9d0777084c8f07f4dbe61a112, type: 3}

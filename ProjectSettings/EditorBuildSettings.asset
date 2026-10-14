@@ -7,6 +7,6 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/PyroDuck/EggHeadsLite/Samples/Platformer/Scenes/Platformer.unity
-    guid: f82332401edfe7b4c8b8674c2927a6bb
+    guid: bc10f1e564f1436fbeb4fe1359d27603
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: b080817b41b440240a29a78c87eb853c, type: 3}

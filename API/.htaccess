@@ -1,0 +1,4 @@
+Options -Indexes
+<FilesMatch "^(config(?:\.local)?\.php|bootstrap\.php|setup\.php|README\.md|campaigns\.example\.json)$">
+    Require all denied
+</FilesMatch>

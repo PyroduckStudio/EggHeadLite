@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using com.pyroduck.eggheadslite.Runtime.Scripts.Events;
+using com.pyroduck.eggheads.Runtime.Scripts.Events;
 
 namespace com.pyroduck.eggheadslite.Tests.Editor
 {

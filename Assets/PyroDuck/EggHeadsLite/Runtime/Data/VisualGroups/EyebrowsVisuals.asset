@@ -11,10 +11,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2105c67117bf439e99b32b3a31701e5e, type: 3}
   m_Name: EyebrowsVisuals
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualGroupsDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualGroupsDataSO
   Name: Eyebrows
   IsSubGroup: 0
   VisualList:
-  - {fileID: 11400000, guid: 1d6c37a271603924793fd9dfe9513834, type: 2}
-  - {fileID: 11400000, guid: 9969cdbdf2d6faa4687ede99116674eb, type: 2}
+  - {fileID: 11400000, guid: e3826caf0706423c863b110dd921eb0d, type: 2}
+  - {fileID: 11400000, guid: 93fe4f25292146eaadeb1314efb1c7d6, type: 2}
   VisualType: 5

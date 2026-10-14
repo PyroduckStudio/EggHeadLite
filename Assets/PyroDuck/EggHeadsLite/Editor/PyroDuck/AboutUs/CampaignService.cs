@@ -10,11 +10,12 @@ using UnityEngine.Networking;
 
 namespace com.pyroduck.eggheadslite.Editor.Promotion
 {
-    /// <summary>Window-owned requests. No startup requests or runtime/player dependencies.</summary>
+    /// <summary>Window-owned requests only; no runtime/player dependencies.</summary>
     public sealed class CampaignService : IDisposable
     {
         private readonly string _url;
         private readonly string _fallback;
+        private readonly PyroDuckCampaignSettings _settings;
         private readonly string _cacheFolder;
         private readonly Dictionary<string, Texture2D> _images = new Dictionary<string, Texture2D>();
         private IEnumerator _work;
@@ -23,13 +24,17 @@ namespace com.pyroduck.eggheadslite.Editor.Promotion
         public string Status { get; private set; } = "Featured picks";
         public event Action Changed;
 
-        public CampaignService(string url, string fallback)
+        public CampaignService(string url, string fallback, PyroDuckCampaignSettings settings = null)
         {
+            _settings = settings;
             _url = url ?? "";
             _fallback = fallback;
             _cacheFolder = Path.Combine("Library", "PyroDuck", "Campaigns", Hash(_url));
             EditorApplication.update += Tick;
         }
+
+        public List<Campaign> GetActive(DateTimeOffset now) =>
+            Catalog?.GetActive(now, _settings) ?? new List<Campaign>();
 
         public void Refresh(bool remoteEnabled, bool force = false)
         {
@@ -102,6 +107,7 @@ namespace com.pyroduck.eggheadslite.Editor.Promotion
             foreach (var campaign in Catalog.campaigns)
             {
                 if (campaign == null || !campaign.enabled || !campaign.active ||
+                    (_settings != null && _settings.IsCurrentProduct(campaign)) ||
                     !CampaignCatalog.IsHttps(campaign.imageUrl) || _images.ContainsKey(campaign.imageUrl)) continue;
                 string key = Hash(campaign.imageUrl) + ".image";
                 byte[] bytes = ReadBytes(key, 4194304, TimeSpan.FromDays(7));

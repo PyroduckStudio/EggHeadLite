@@ -1,4 +1,4 @@
-using com.pyroduck.eggheadslite.Runtime.Scripts.Character;
+using com.pyroduck.eggheads.Runtime.Scripts.Character;
 using NUnit.Framework;
 using UnityEngine;
 

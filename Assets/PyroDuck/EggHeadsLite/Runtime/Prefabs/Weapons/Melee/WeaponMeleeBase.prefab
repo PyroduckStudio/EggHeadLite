@@ -46,10 +46,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ee9c9cb0ed37ba4285de1f5251823e7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Combat.MeleeWeapon
-  equipSound: {fileID: 8300000, guid: 3be8d5b0407f2434dbb149678add7cd7, type: 3}
-  dropSound: {fileID: 8300000, guid: 3be8d5b0407f2434dbb149678add7cd7, type: 3}
-  hitSound: {fileID: 8300000, guid: 3be8d5b0407f2434dbb149678add7cd7, type: 3}
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Combat.MeleeWeapon
+  equipSound: {fileID: 8300000, guid: e7d80c3f55574ca596ff255bf03c3a3e, type: 3}
+  dropSound: {fileID: 8300000, guid: e7d80c3f55574ca596ff255bf03c3a3e, type: 3}
+  hitSound: {fileID: 8300000, guid: e7d80c3f55574ca596ff255bf03c3a3e, type: 3}
   audioSource: {fileID: 3363843313152355871}
   attackCooldown: 0.2
   baseDamage: 10
@@ -60,15 +60,16 @@ MonoBehaviour:
     m_Bits: 4294967295
   swingWindow: -1
   impactSounds: []
-  bloodEffectPrefab: {fileID: 8523536928793398008, guid: 6d1584412ccb1114eab43e7aee545a8a, type: 3}
+  bloodEffectPrefab: {fileID: 8523536928793398008, guid: 914630edd6bd4be191028690ddfc8712, type: 3}
   airSwingClip: {fileID: 8300000, guid: ccf93416b18196a4584268f82169406f, type: 3}
   airSwingAudioSource: {fileID: 6853565208872318829}
-  minSwingSpeed: 4
-  maxSwingSpeed: 18
+  minSwingSpeed: 150
+  maxSwingSpeed: 600
   minSwingVolume: 0.15
   maxSwingVolume: 1
-  minSwingPitch: 0.9
-  maxSwingPitch: 1.35
+  minSwingPitch: 0.75
+  maxSwingPitch: 0.95
+  swingAudioSmoothing: 40
 --- !u!60 &8680802536943955616
 PolygonCollider2D:
   m_ObjectHideFlags: 0

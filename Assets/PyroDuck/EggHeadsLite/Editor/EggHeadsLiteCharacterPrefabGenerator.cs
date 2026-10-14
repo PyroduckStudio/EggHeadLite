@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.IO;
-using com.pyroduck.eggheadslite.Runtime.Scripts.Character;
-using com.pyroduck.eggheadslite.Runtime.Scripts.Combat;
-using com.pyroduck.eggheadslite.Runtime.Scripts.Data;
-using com.pyroduck.eggheadslite.Runtime.Scripts.Enums;
+using com.pyroduck.eggheads.Runtime.Scripts.Character;
+using com.pyroduck.eggheads.Runtime.Scripts.Combat;
+using com.pyroduck.eggheads.Runtime.Scripts.Data;
+using com.pyroduck.eggheads.Runtime.Scripts.Enums;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -12,7 +12,7 @@ using UnityEditor.UIElements;
 
 namespace com.pyroduck.eggheadslite.Editor
 {
-    public sealed class EggHeadsLiteCharacterPrefabGenerator : EditorWindow
+    public sealed partial class EggHeadsLiteCharacterPrefabGenerator : EditorWindow
     {
         private const string PackageName = "com.pyroduck.eggheadslite";
         private const string DefaultOutputFolder = "Assets/EggHeadsLite/GeneratedPrefabs";
@@ -37,9 +37,10 @@ namespace com.pyroduck.eggheadslite.Editor
         [SerializeField] private string prefabName = "GeneratedEggHeadCharacter";
         [SerializeField] private EggHeadDatabaseSO database;
         [SerializeField] private bool autoRegisterGeneratedPrefab = true;
+        [SerializeField] private bool defaultsInitialized;
 
-        private static readonly Dictionary<string, VisualDataSO> VisualDataByPrefabPath = new();
-        private static bool visualDataLookupInitialized;
+        private readonly Dictionary<string, VisualDataSO> VisualDataByPrefabPath = new();
+        private bool visualDataLookupInitialized;
 
         private PreviewRenderUtility _previewUtility;
         private GameObject _previewInstance;
@@ -65,12 +66,15 @@ namespace com.pyroduck.eggheadslite.Editor
         private void OnEnable()
         {
             RebuildVisualDataLookup();
-            LoadDefaults();
+            if (!defaultsInitialized) LoadDefaults();
+            else RefreshPreviewIfReady();
             InitializeCampaigns();
+            Undo.undoRedoPerformed += OnGeneratorUndo;
         }
 
         private void OnDisable()
         {
+            Undo.undoRedoPerformed -= OnGeneratorUndo;
             CleanupPreview();
             _campaignService?.Dispose();
             _campaignService = null;
@@ -166,6 +170,7 @@ namespace com.pyroduck.eggheadslite.Editor
                 tint.style.display = IsColorable(value) ? DisplayStyle.Flex : DisplayStyle.None;
                 tint.RegisterValueChangedCallback(evt =>
                 {
+                    RecordChange("Change part color");
                     assignColor(evt.newValue);
                     RefreshPreviewIfReady();
                 });
@@ -175,16 +180,19 @@ namespace com.pyroduck.eggheadslite.Editor
             field.RegisterValueChangedCallback(evt =>
             {
                 var prefab = evt.newValue as GameObject;
+                RecordChange("Change " + label);
                 assign(prefab);
                 if (tint != null) tint.style.display = IsColorable(prefab) ? DisplayStyle.Flex : DisplayStyle.None;
-                _generateButton?.SetEnabled(characterBase != null && !string.IsNullOrWhiteSpace(prefabName));
+                UpdateGenerateButtons();
                 RefreshPreviewIfReady();
             });
+            AddPartGallery(card, label, () => field.value as GameObject, selected => field.value = selected);
         }
 
         private void BuildSettingsUI()
         {
             _settingsPanel.Clear();
+            BuildQuickStart();
             var baseCard = SettingsCard("Character Base", "Choose the foundation for your character.");
             PartField(baseCard, "Base", characterBase, v => characterBase = v);
             var parts = SettingsCard("Character Parts", "Drag in prefabs and customize available colors.");
@@ -199,30 +207,29 @@ namespace com.pyroduck.eggheadslite.Editor
             PartField(parts, "Weapon", weapon, v => weapon = v, weaponColor, v => weaponColor = v);
             var output = SettingsCard("Save Character", "Create a prefab for your project.");
             var folder = new TextField("Output Folder") { value = outputFolder };
-            folder.RegisterValueChangedCallback(evt => outputFolder = evt.newValue);
+            folder.RegisterValueChangedCallback(evt => { RecordChange("Change output folder"); outputFolder = evt.newValue; });
             output.Add(folder);
             var name = new TextField("Prefab Name") { value = prefabName };
             name.RegisterValueChangedCallback(evt =>
             {
+                RecordChange("Change prefab name");
                 prefabName = evt.newValue;
-                _generateButton.SetEnabled(characterBase != null && !string.IsNullOrWhiteSpace(prefabName));
+                UpdateGenerateButtons();
             });
             output.Add(name);
             var data = new ObjectField("Database SO")
                 { objectType = typeof(EggHeadDatabaseSO), allowSceneObjects = false, value = database };
-            data.RegisterValueChangedCallback(evt => database = evt.newValue as EggHeadDatabaseSO);
+            data.RegisterValueChangedCallback(evt => { RecordChange("Change database"); database = evt.newValue as EggHeadDatabaseSO; _settingsPanel.schedule.Execute(BuildSettingsUI); });
             output.Add(data);
             var register = new Toggle("Auto Register In SO") { value = autoRegisterGeneratedPrefab };
-            register.RegisterValueChangedCallback(evt => autoRegisterGeneratedPrefab = evt.newValue);
+            register.RegisterValueChangedCallback(evt => { RecordChange("Change registration"); autoRegisterGeneratedPrefab = evt.newValue; });
             output.Add(register);
             var actions = new VisualElement();
             actions.AddToClassList("button-row");
             output.Add(actions);
             var defaults = new Button(() =>
             {
-                eyebrows = LoadAsset("Runtime/Prefabs/Eyebrows/EyeBrow_0 Variant.prefab");
-                beardMustache = LoadAsset("Runtime/Prefabs/BeardMustache/Mustache_0 Variant.prefab");
-                LoadDefaults();
+                ResetCharacterDefaults();
                 BuildSettingsUI();
             }) { text = "Load Defaults" };
             defaults.AddToClassList("secondary-button");
@@ -244,6 +251,9 @@ namespace com.pyroduck.eggheadslite.Editor
             _generateButton.AddToClassList("primary-button");
             _generateButton.SetEnabled(characterBase != null && !string.IsNullOrWhiteSpace(prefabName));
             output.Add(_generateButton);
+            _addToSceneButton = ActionButton(output, "Generate & Add to Scene", GenerateAndAddToScene, "primary-button");
+            _generationStatus = AddLabel(output, "", "status");
+            UpdateGenerateButtons();
             _featuredPanel = new VisualElement();
             _featuredPanel.AddToClassList("generator-featured");
             _featuredPanel.RegisterCallback<MouseEnterEvent>(_ => _campaignHovered = true);
@@ -254,6 +264,7 @@ namespace com.pyroduck.eggheadslite.Editor
             });
             _settingsPanel.Add(_featuredPanel);
             RenderCampaignUI();
+            BuildFullComparison();
         }
 
         private string _displayedCampaign;
@@ -392,6 +403,7 @@ namespace com.pyroduck.eggheadslite.Editor
                 (current != null ? _campaignService.GetImage(current.imageUrl) : null) != _displayedCampaignImage ||
                 _campaignService.Status != _displayedCampaignStatus)
                 RenderCampaignUI();
+            UpdateGenerateButtons();
             _previewPanel?.MarkDirtyRepaint();
         }
 
@@ -467,8 +479,13 @@ namespace com.pyroduck.eggheadslite.Editor
             camera.transform.position = new Vector3(center.x, center.y, center.z - 10f);
             camera.transform.rotation = Quaternion.identity;
 
+            if (EggHeadsRenderPipeline.IsKnownPipeline)
+                EggHeadsRenderPipeline.ConfigureCamera(camera, EggHeadsRenderPipeline.CurrentTarget);
+
             EditorUtility.SetCameraAnimateMaterials(camera, true);
-            _previewUtility.Render();
+            foreach (var adapter in _previewInstance.GetComponentsInChildren<com.pyroduck.eggheadslite.Rendering.EggHeadsSpritePipelineAdapter>(true))
+                adapter.ApplyProperties();
+            _previewUtility.Render(true);
             EditorUtility.SetCameraAnimateMaterials(camera, false);
 
             var texture = _previewUtility.EndPreview();
@@ -549,9 +566,7 @@ namespace com.pyroduck.eggheadslite.Editor
 
         private void PreparePreviewMaterials(GameObject root)
         {
-            var previewShader = Shader.Find("Sprites/Default")
-                                ?? Shader.Find("Universal Render Pipeline/2D/Sprite-Unlit-Default")
-                                ?? Shader.Find("Unlit/Texture");
+            var previewShader = EggHeadsRenderPipeline.PreviewShader();
 
             if (previewShader == null)
             {
@@ -632,7 +647,7 @@ namespace com.pyroduck.eggheadslite.Editor
             return (GameObject)EditorGUILayout.ObjectField(label, value, typeof(GameObject), false);
         }
 
-        private static void DrawColorFieldIfColorable(string label, GameObject prefab, ref Color color)
+        private void DrawColorFieldIfColorable(string label, GameObject prefab, ref Color color)
         {
             if (!IsColorable(prefab))
                 return;
@@ -668,6 +683,7 @@ namespace com.pyroduck.eggheadslite.Editor
             weapon = weapon != null
                 ? weapon
                 : LoadDefaultVisual(VisualType.Weapon, "Runtime/Prefabs/Weapons/Melee/WeaponMele_0 Variant.prefab");
+            defaultsInitialized = true;
             RefreshPreviewIfReady();
         }
 
@@ -699,17 +715,18 @@ namespace com.pyroduck.eggheadslite.Editor
             return LoadAsset(fallbackPath);
         }
 
-        private void GeneratePrefab()
+        private GameObject GeneratePrefab()
         {
+            if (characterBase == null || string.IsNullOrWhiteSpace(prefabName) || EditorApplication.isPlayingOrWillChangePlaymode) return null;
             outputFolder = NormalizeOutputFolder(outputFolder);
             EnsureFolder(outputFolder);
 
-            var root = (GameObject)PrefabUtility.InstantiatePrefab(characterBase);
-            if (root == null)
-                root = Instantiate(characterBase);
-
+            var staging = UnityEditor.SceneManagement.EditorSceneManager.NewPreviewScene();
+            GameObject root = null;
             try
             {
+                root = (GameObject)PrefabUtility.InstantiatePrefab(characterBase, staging);
+                if (root == null) throw new System.InvalidOperationException("Character Base must be a prefab asset.");
                 root.name = SanitizeFileName(prefabName);
                 ApplyCharacterConfiguration(root);
 
@@ -723,10 +740,13 @@ namespace com.pyroduck.eggheadslite.Editor
                 Selection.activeObject = savedPrefab;
                 EditorGUIUtility.PingObject(Selection.activeObject);
                 Debug.Log($"EggHeads Lite generated character prefab: {path}");
+                if (_generationStatus != null) _generationStatus.text = "Saved: " + path;
+                return savedPrefab;
             }
             finally
             {
-                DestroyImmediate(root);
+                if (root != null) DestroyImmediate(root);
+                UnityEditor.SceneManagement.EditorSceneManager.ClosePreviewScene(staging);
             }
         }
 
@@ -766,6 +786,7 @@ namespace com.pyroduck.eggheadslite.Editor
                 return;
             }
 
+            Undo.RecordObject(database, "Register generated EggHead");
             database.characterPrefabs ??= new List<GameObject>();
             if (database.characterPrefabs.Contains(generatedPrefab))
                 return;
@@ -810,9 +831,6 @@ namespace com.pyroduck.eggheadslite.Editor
         private static GameObject AddVisualPart(CharacterVisualController visualController, VisualType visualType,
             GameObject prefab)
         {
-            if (prefab == null)
-                return null;
-
             if (visualController == null || visualController.VisualMappings == null)
             {
                 Debug.LogWarning($"EggHeads Lite generator could not find visual mappings for '{visualType}'.");
@@ -830,6 +848,12 @@ namespace com.pyroduck.eggheadslite.Editor
                     return null;
                 }
 
+                if (prefab == null)
+                {
+                    ClearChildren(visualMapping.Parent);
+                    visualMapping.CurrentVisual = null;
+                    return null;
+                }
                 var instance = AddPart(visualMapping.Parent, prefab);
                 visualMapping.CurrentVisual = instance;
                 return instance;
@@ -839,7 +863,7 @@ namespace com.pyroduck.eggheadslite.Editor
             return null;
         }
 
-        private static void ApplyVisualColor(
+        private void ApplyVisualColor(
             CharacterVisualController visualController,
             VisualType visualType,
             GameObject prefab,
@@ -852,18 +876,18 @@ namespace com.pyroduck.eggheadslite.Editor
             if (colorizer == null)
                 return;
 
-            colorizer.bodyParts ??= new List<com.pyroduck.eggheadslite.Runtime.Scripts.Character.BodyPart>();
+            colorizer.bodyParts ??= new List<com.pyroduck.eggheads.Runtime.Scripts.Character.BodyPart>();
             colorizer.RefreshForVisualType(visualType);
             colorizer.SetColorForVisualType(visualType, color);
             EditorUtility.SetDirty(colorizer);
         }
 
-        private static bool IsColorable(GameObject prefab)
+        private bool IsColorable(GameObject prefab)
         {
             return FindVisualData(prefab)?.isColorable == true;
         }
 
-        private static VisualDataSO FindVisualData(GameObject prefab)
+        private VisualDataSO FindVisualData(GameObject prefab)
         {
             if (prefab == null)
                 return null;
@@ -878,7 +902,7 @@ namespace com.pyroduck.eggheadslite.Editor
                 : null;
         }
 
-        private static void RebuildVisualDataLookup()
+        private void RebuildVisualDataLookup()
         {
             VisualDataByPrefabPath.Clear();
 
@@ -900,7 +924,7 @@ namespace com.pyroduck.eggheadslite.Editor
             visualDataLookupInitialized = true;
         }
 
-        private static void AddVisualDataPath(string prefabPath, VisualDataSO visualData)
+        private void AddVisualDataPath(string prefabPath, VisualDataSO visualData)
         {
             if (string.IsNullOrEmpty(prefabPath) || visualData == null)
                 return;
@@ -920,7 +944,7 @@ namespace com.pyroduck.eggheadslite.Editor
             }
         }
 
-        private static void AddVisualDataPathAlias(string prefabPath, VisualDataSO visualData)
+        private void AddVisualDataPathAlias(string prefabPath, VisualDataSO visualData)
         {
             if (!VisualDataByPrefabPath.ContainsKey(prefabPath))
                 VisualDataByPrefabPath.Add(prefabPath, visualData);

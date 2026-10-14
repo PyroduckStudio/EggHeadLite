@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9593ec4516de9fc4b818153fb7be61d9, type: 3}
   m_Name: Hairs_0
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualDataSO
   Name: Hairs_0
   BodyPartPrefab: {fileID: 1301718918042565439, guid: bebb5ba702ecd3e4d870f3c4cdf26a82, type: 3}
   IconSprite: {fileID: 4403576634896045162, guid: c05e888e27acb0e49abf0f6b0a223c96, type: 3}

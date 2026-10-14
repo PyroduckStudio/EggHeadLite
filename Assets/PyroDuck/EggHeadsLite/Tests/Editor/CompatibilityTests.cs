@@ -1,6 +1,6 @@
 using System.Collections;
-using com.pyroduck.eggheadslite.Runtime.Scripts.Character;
-using com.pyroduck.eggheadslite.Runtime.Scripts.Utils;
+using com.pyroduck.eggheads.Runtime.Scripts.Character;
+using com.pyroduck.eggheads.Runtime.Scripts.Utils;
 using NUnit.Framework;
 using UnityEditor.SceneManagement;
 using UnityEngine;

@@ -14,7 +14,8 @@
       "discountPercent": 30,
       "badge": "Explore the full collection",
       "imageUrl": "assetguid:d5d5ea50f91141d69e7a86ce3787afff",
-      "targetUrl": "https://assetstore.unity.com/packages/2d/characters/egg-heads-2d-364008"
+      "targetUrl": "https://assetstore.unity.com/packages/2d/characters/egg-heads-2d-364008",
+      "productId": "eggheads-full"
     }
   ]
 }

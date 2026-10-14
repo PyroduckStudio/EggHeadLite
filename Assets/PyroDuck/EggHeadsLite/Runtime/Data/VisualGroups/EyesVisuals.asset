@@ -11,12 +11,12 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2105c67117bf439e99b32b3a31701e5e, type: 3}
   m_Name: EyesVisuals
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualGroupsDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualGroupsDataSO
   Name: Eyes
   IsSubGroup: 0
   VisualList:
-  - {fileID: 11400000, guid: 2904b99095182fc479e8fb912c96e47e, type: 2}
-  - {fileID: 11400000, guid: 6db586164cb60164684f9f851695b671, type: 2}
-  - {fileID: 11400000, guid: b33d1c19a4ec50a438a1a90ed2c7df47, type: 2}
-  - {fileID: 11400000, guid: 3cfab1cb47577c34b8f29e6fafd8a403, type: 2}
+  - {fileID: 11400000, guid: 2911d0e85fad42d78b1fc4a9e8b8eb42, type: 2}
+  - {fileID: 11400000, guid: d0d4eb1bfb074d8ba1b6e77a97483e53, type: 2}
+  - {fileID: 11400000, guid: 335a636efad94161bd6555908cfd2615, type: 2}
+  - {fileID: 11400000, guid: 7c6e9d4abb2f4f349ea0923a794a3307, type: 2}
   VisualType: 0

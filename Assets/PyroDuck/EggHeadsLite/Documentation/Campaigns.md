@@ -2,14 +2,20 @@
 
 Open **Tools > PyroDuck > About Us**, or **About PyroDuck** in the Lite generator.
 The window uses UI Toolkit (C#, UXML and USS), with a Featured carousel below
-the studio description. It does not open itself, run requests at project startup,
-or add code to player builds. The existing runtime systems are unchanged.
+the studio description. About Us does not open itself or add code to player builds.
+The first-import **EggHeads Lite Setup** page opens once per project after import
+and compilation finish, and uses the same campaign service, feed and online-content
+preference. Requests run while these windows are open. Setup can be reopened from
+**Tools > PyroDuck > EggHeadsLite > Setup**. Its first-show flag is stored in local
+EditorPrefs per project path; reimports and domain reloads do not reopen it.
+Batch-mode imports do not open Setup or set its first-show flag.
 
 ## Set up remote publishing
 
 1. Select `Editor/PyroDuck/AboutUs/PyroDuckCampaignSettings.asset` in the package.
-2. The **Feed Url** field is initially empty. The bundled `campaigns.json` then
-   displays the Egg Heads 2D card without making network requests.
+2. **Feed Url** is configured as
+   `https://pyroduck.com/API/campaigns.php?product=eggheads-lite`.
+   Clearing it uses the bundled `campaigns.json` without network requests.
 3. Copy `Editor/PyroDuck/AboutUs/campaigns.json` to your HTTPS host. For example,
    you could publish it at `https://pyroduck.com/campaigns.json`; that example URL
    is not configured or published by this change.
@@ -26,6 +32,32 @@ The URLs must return the JSON/image directly (HTTP 200); redirects and login pag
 are not followed. Use UTF-8 JSON and PNG/JPEG images. No CORS setup is needed for
 the native Unity editor requests.
 
+## Reusing the promotion system in another package
+
+Set **Current Product Id** on `PyroDuckCampaignSettings.asset` to the identity of
+the package containing the windows. Lite ships with `eggheads-lite`; use
+`eggheads-full` when distributing the promotion system inside Full, or your own
+stable identity for another project. Update the feed's `?product=` value as well.
+Do not use the shared runtime assembly name as the identity: Lite and Full share it.
+
+Every campaign should provide `productId` for the advertised product. Campaign
+`id` identifies an individual promotion; multiple campaigns can advertise the same
+product. All matching campaigns are hidden in both Setup and About Us, including
+cached and offline fallback campaigns. Hidden campaign images are not downloaded.
+Other products remain eligible; Lite can still advertise Full.
+
+**Current Product Aliases** accepts previous identities of the same product.
+**Current Product Urls** accepts its store/product links and recognizes older feeds
+without `productId`. URL tracking queries, fragments and trailing slashes are ignored;
+Asset Store links also match by numeric product ID even after a slug rename.
+Fill in the host's own links when reusing this system with legacy feeds. Unknown
+products remain visible; the system never guesses identity from a title.
+
+The PHP API also omits campaigns whose `productId` matches the host's `product`
+query. Its `products` targeting list describes the audience, not the advertised
+product. Existing feeds without `productId` remain supported. Reopen windows after
+changing the settings. This does not install the promotion windows into Full yet.
+
 ## JSON format
 
 ```json
@@ -35,6 +67,7 @@ the native Unity editor requests.
   "campaigns": [
     {
       "id": "egg-heads-2d",
+      "productId": "eggheads-full",
       "enabled": true,
       "active": true,
       "priority": 100,

@@ -11,10 +11,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2105c67117bf439e99b32b3a31701e5e, type: 3}
   m_Name: HairAndHelmets_HelmetsVisuals
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualGroupsDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualGroupsDataSO
   Name: Hairs&Helmets/Helmets
   IsSubGroup: 1
   VisualList:
-  - {fileID: 11400000, guid: 87a4a74ca1462be4ab4304ae8bc7b19a, type: 2}
-  - {fileID: 11400000, guid: 15aae020cab50914aaeb10255d31c948, type: 2}
+  - {fileID: 11400000, guid: 5a2e7628de144c3cbd99d43f630e6e2e, type: 2}
+  - {fileID: 11400000, guid: dcc38319066246188d5d6f30f673f5be, type: 2}
   VisualType: 2

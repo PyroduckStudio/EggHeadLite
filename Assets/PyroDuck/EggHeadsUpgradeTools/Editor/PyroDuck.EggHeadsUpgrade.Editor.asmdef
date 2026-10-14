@@ -1,0 +1,7 @@
+{
+  "name": "PyroDuck.EggHeadsUpgrade.Editor",
+  "rootNamespace": "PyroDuck.EggHeadsUpgrade",
+  "references": [],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

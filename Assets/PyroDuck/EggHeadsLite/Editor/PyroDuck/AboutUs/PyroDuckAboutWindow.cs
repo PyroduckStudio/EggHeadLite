@@ -89,7 +89,7 @@ namespace com.pyroduck.eggheadslite.Editor.Promotion
             rootVisualElement.Q<Button>("refresh").clicked += () => _service.Refresh(toggle.value, true);
             var settings = AssetDatabase.LoadAssetAtPath<PyroDuckCampaignSettings>(_folder + "/PyroDuckCampaignSettings.asset");
             var fallback = settings != null ? settings.fallbackCatalog : AssetDatabase.LoadAssetAtPath<TextAsset>(_folder + "/campaigns.json");
-            _service = new CampaignService(settings != null ? settings.feedUrl : "", fallback != null ? fallback.text : "");
+            _service = new CampaignService(settings != null ? settings.feedUrl : "", fallback != null ? fallback.text : "", settings);
             _service.Changed += Render;
             _hovered = false;
             _index = 0;
@@ -102,7 +102,7 @@ namespace com.pyroduck.eggheadslite.Editor.Promotion
         private void Refilter()
         {
             string currentId = _active.Count > 0 ? _active[_index].id : null;
-            _active = _service.Catalog?.GetActive(DateTimeOffset.UtcNow) ?? new List<Campaign>();
+            _active = _service.GetActive(DateTimeOffset.UtcNow);
             int existing = _active.FindIndex(c => c.id == currentId);
             _index = existing >= 0 ? existing : 0;
         }
@@ -162,7 +162,7 @@ namespace com.pyroduck.eggheadslite.Editor.Promotion
                 _service.Refresh(EditorPrefs.GetBool(RemotePreference, true));
             }
             // Date boundaries are evaluated even while hover pauses slide rotation.
-            var valid = _service.Catalog?.GetActive(DateTimeOffset.UtcNow);
+            var valid = _service.GetActive(DateTimeOffset.UtcNow);
             bool changed = (valid?.Count ?? 0) != _active.Count;
             if (!changed && valid != null)
                 for (int i = 0; i < valid.Count; i++) if (valid[i].id != _active[i].id) { changed = true; break; }

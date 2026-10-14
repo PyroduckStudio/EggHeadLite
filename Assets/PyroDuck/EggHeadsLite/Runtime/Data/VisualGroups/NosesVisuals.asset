@@ -11,10 +11,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2105c67117bf439e99b32b3a31701e5e, type: 3}
   m_Name: NosesVisuals
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualGroupsDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualGroupsDataSO
   Name: Noses
   IsSubGroup: 0
   VisualList:
-  - {fileID: 11400000, guid: f083222918fd5bf4bb6cc597699e442b, type: 2}
-  - {fileID: 11400000, guid: 7a43c68992398104cbc85da0a75b66a3, type: 2}
+  - {fileID: 11400000, guid: 361237e3ace3401bb6b7e71112932d48, type: 2}
+  - {fileID: 11400000, guid: 7c7692571df041b8bac11fb581dee503, type: 2}
   VisualType: 4

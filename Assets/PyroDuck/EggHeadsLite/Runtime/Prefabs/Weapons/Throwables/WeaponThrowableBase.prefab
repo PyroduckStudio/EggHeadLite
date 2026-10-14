@@ -45,9 +45,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec29f8da30cce9a4aab2c510d0035c50, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Combat.ThrowableWeapon
-  equipSound: {fileID: 8300000, guid: 3be8d5b0407f2434dbb149678add7cd7, type: 3}
-  dropSound: {fileID: 8300000, guid: 3be8d5b0407f2434dbb149678add7cd7, type: 3}
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Combat.ThrowableWeapon
+  equipSound: {fileID: 8300000, guid: e7d80c3f55574ca596ff255bf03c3a3e, type: 3}
+  dropSound: {fileID: 8300000, guid: e7d80c3f55574ca596ff255bf03c3a3e, type: 3}
   hitSound: {fileID: 8300000, guid: b53ddb30b7796d648a9c87f1531ddd50, type: 3}
   audioSource: {fileID: 5735566231623030951}
   attackCooldown: 0.2
@@ -58,8 +58,8 @@ MonoBehaviour:
   spinSpeed: 540
   damage: 15
   explosionRadius: 3
-  explosionEffectPrefab: {fileID: 1751648891765803902, guid: c2f7e62dbbb1d8341b3b6819e4fe7d33, type: 3}
-  throwablePrefab: {fileID: 6420275526255304403, guid: 0df319f6076ae554898e4dbb5f413056, type: 3}
+  explosionEffectPrefab: {fileID: 1751648891765803902, guid: 0fef4d11623c4b6aae65da0f3c210f55, type: 3}
+  throwablePrefab: {fileID: 6420275526255304403, guid: 26cb2c1493454025b669b0c6c5c5ca27, type: 3}
   ownerTransform: {fileID: 1030163285613482857}
   returnTarget: {fileID: 0}
   throwableLayerName: Throwable

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9593ec4516de9fc4b818153fb7be61d9, type: 3}
   m_Name: Mustache_1
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualDataSO
   Name: Mustache_1
   BodyPartPrefab: {fileID: 2014958133004866467, guid: eaf7274bd7741b14db7e7a5b74552187, type: 3}
   IconSprite: {fileID: -6260887584581534153, guid: c05e888e27acb0e49abf0f6b0a223c96, type: 3}

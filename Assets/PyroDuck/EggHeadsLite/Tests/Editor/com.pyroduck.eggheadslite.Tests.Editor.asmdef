@@ -2,10 +2,13 @@
     "name": "com.pyroduck.eggheadslite.Tests.Editor",
     "rootNamespace": "com.pyroduck.eggheadslite.Tests.Editor",
     "references": [
-        "com.pyroduck.eggheadslite.Runtime",
+        "com.pyroduck.eggheads.Runtime",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "com.pyroduck.eggheadslite.Editor"
+        "com.pyroduck.eggheadslite.Editor",
+        "com.pyroduck.eggheads.Editor",
+        "PyroDuck.EggHeadsUpgrade.Editor",
+        "com.pyroduck.eggheadslite.rendering.Runtime"
     ],
     "includePlatforms": [
         "Editor"

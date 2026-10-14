@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b621e18f21fa4d3cb85e91e8c73cf1bb, type: 3}
   m_Name: PyroDuckCampaignSettings
   m_EditorClassIdentifier:
-  feedUrl:
+  currentProductId: eggheads-lite
+  currentProductAliases: []
+  currentProductUrls: []
+  feedUrl: https://pyroduck.com/API/campaigns.php?product=eggheads-lite
   fallbackCatalog: {fileID: 4900000, guid: 8ae8d4e3348c4b7593cab01ee3dd013f, type: 3}

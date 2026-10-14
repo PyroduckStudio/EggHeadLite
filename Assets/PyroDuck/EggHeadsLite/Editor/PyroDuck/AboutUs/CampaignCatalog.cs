@@ -9,6 +9,7 @@ namespace com.pyroduck.eggheadslite.Editor.Promotion
     public sealed class Campaign
     {
         public string id;
+        public string productId;
         public bool enabled;
         public bool active;
         public int priority;
@@ -49,7 +50,7 @@ namespace com.pyroduck.eggheadslite.Editor.Promotion
             catch (ArgumentException) { return false; }
         }
 
-        public List<Campaign> GetActive(DateTimeOffset now)
+        public List<Campaign> GetActive(DateTimeOffset now, PyroDuckCampaignSettings settings = null)
         {
             var result = new List<Campaign>();
             if (!enabled || campaigns == null) return result;
@@ -59,7 +60,8 @@ namespace com.pyroduck.eggheadslite.Editor.Promotion
                 if (item == null || !item.enabled || !item.active || string.IsNullOrWhiteSpace(item.id) ||
                     string.IsNullOrWhiteSpace(item.title) || item.title.Length > 100 ||
                     (item.description?.Length ?? 0) > 500 || (item.badge?.Length ?? 0) > 80 ||
-                    !IsDestination(item.targetUrl) || !InDateRange(item, now) || !ids.Add(item.id)) continue;
+                    !IsDestination(item.targetUrl) || !InDateRange(item, now) ||
+                    (settings != null && settings.IsCurrentProduct(item)) || !ids.Add(item.id)) continue;
                 result.Add(item);
             }
             result.Sort((a, b) =>

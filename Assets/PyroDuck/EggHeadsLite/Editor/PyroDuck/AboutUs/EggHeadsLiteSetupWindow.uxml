@@ -1,0 +1,56 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:ScrollView class="page setup-page">
+        <ui:VisualElement class="header setup-header">
+            <ui:Label text="Welcome to EggHeads Lite" class="setup-title" />
+            <ui:Label text="Build your first modular character in a few steps." class="subtitle" />
+        </ui:VisualElement>
+        <ui:VisualElement class="section">
+            <ui:Label text="GET STARTED" class="eyebrow" />
+            <ui:Label text="1. Open the Generator and choose a preset or Load Defaults." class="setup-step" />
+            <ui:Label text="2. Pick parts, adjust available colors and preview your character." class="setup-step" />
+            <ui:Label text="3. Choose a prefab name, then Generate or Generate &amp; Add to Scene." class="setup-step" />
+            <ui:VisualElement class="button-row">
+                <ui:Button name="generator" text="Open Generator" class="primary-button" />
+                <ui:Button name="quick-start" text="Getting Started Guide" class="secondary-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="section">
+            <ui:Label text="TRY THE PLAYABLE SAMPLE" class="eyebrow" />
+            <ui:Label text="Open the Platformer scene, then press Play. Unity asks you to save your current scene before switching." class="body-text" />
+            <ui:Button name="demo" text="Open Playable Demo" class="secondary-button" />
+            <ui:Label text="For sample requirements and layers, read Getting Started. The Generator's Check Setup reports common issues." class="setup-note" />
+        </ui:VisualElement>
+        <ui:VisualElement name="featured" class="section">
+            <ui:Label text="EXPLORE THE FULL COLLECTION" class="eyebrow" />
+            <ui:VisualElement name="campaign-card" class="campaign-card">
+                <ui:VisualElement class="image-frame">
+                    <ui:Image name="campaign-image" class="campaign-image" scale-mode="ScaleToFit" />
+                    <ui:Label name="image-placeholder" class="image-placeholder" />
+                    <ui:Label name="discount-ribbon" class="discount-ribbon" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:VisualElement class="card-content">
+                    <ui:Label name="campaign-badge" class="badge" />
+                    <ui:Label name="campaign-title" class="campaign-title" />
+                    <ui:Label name="campaign-description" class="body-text" />
+                    <ui:Button name="view-asset" text="Explore Full on Asset Store" class="primary-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Label name="empty-state" text="No featured picks right now." class="body-text setup-hidden" />
+            <ui:VisualElement name="navigation" class="navigation setup-hidden">
+                <ui:Button name="previous" text="&lt;" class="arrow" />
+                <ui:Label name="slide-count" />
+                <ui:Button name="next" text="&gt;" class="arrow" />
+            </ui:VisualElement>
+            <ui:VisualElement class="setup-controls">
+                <ui:Button name="refresh" text="Refresh" class="secondary-button" />
+                <ui:Label name="status" class="status" />
+            </ui:VisualElement>
+            <ui:Toggle name="remote-toggle" label="Load online featured content" />
+            <ui:Button name="migration" text="Lite to Full Guide" class="secondary-button" />
+        </ui:VisualElement>
+        <ui:VisualElement class="section setup-footer">
+            <ui:Button name="done" text="Done - Start Creating" class="primary-button" />
+            <ui:Label text="This page opens once per project. Reopen it anytime from Tools &gt; PyroDuck &gt; EggHeadsLite &gt; Setup." class="setup-note" />
+        </ui:VisualElement>
+    </ui:ScrollView>
+</ui:UXML>

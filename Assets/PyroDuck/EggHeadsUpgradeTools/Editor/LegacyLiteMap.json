@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 1,
+  "guidChanges": [
+    {
+      "oldGuid": "efbfe8c224843e042b9888374f21ceaf",
+      "newGuid": "ee8bc900a38044a69cd044e328c24134"
+    },
+    {
+      "oldGuid": "338e1bc119e270e4f8a1fa192f8a991d",
+      "newGuid": "6bd102b3abd947fb913d6d3c5e8e4775"
+    },
+    {
+      "oldGuid": "a9781e5edefe255469438595e658e56a",
+      "newGuid": "6986585991ca4ce4a6f8eb867d86074c"
+    },
+    {
+      "oldGuid": "70cf7a4974ee709408f937533d4403c6",
+      "newGuid": "c5b1857cc5984e548cb4a173643b008e"
+    },
+    {
+      "oldGuid": "59a3f8614e5b14f8cbe5d3892e888291",
+      "newGuid": "f7a6b9512ef54b8ea7c7b12a4e9943ca"
+    },
+    {
+      "oldGuid": "0764c883d82d89049a2e99faea75f7bf",
+      "newGuid": "2aa64bc320884dbfa03e5acf1233c159"
+    },
+    {
+      "oldGuid": "f72bc52f450979f49b1a8387e2062724",
+      "newGuid": "7480ef6c458b425fafbea72da1036c4d"
+    },
+    {
+      "oldGuid": "473d42c7958440cfa33627b7922dd7c1",
+      "newGuid": "4ce4bc47027847beaa206f0efc59cd42"
+    },
+    {
+      "oldGuid": "a1285242ea0140a8949e8c4ea7580f7d",
+      "newGuid": "8a77d0e96df74ecf8c2b40a955d9b3b5"
+    },
+    {
+      "oldGuid": "253b434585f300342b8f0df1f8a667ee",
+      "newGuid": "fad360430ef84363904475ff0d95c492"
+    },
+    {
+      "oldGuid": "923ec5c7fb5965440bac45e4f8303e53",
+      "newGuid": "0f8faa1550c74cf6bbebe285a55d19b4"
+    },
+    {
+      "oldGuid": "c7c87bd4454a78a4d89d54a366c68c85",
+      "newGuid": "acc6e856b47b4ac093b11417a1424f65"
+    },
+    {
+      "oldGuid": "535b04d8ef66fee4a815be647ef8f32e",
+      "newGuid": "19152d6ae22648b09ae3e885d35d0f11"
+    },
+    {
+      "oldGuid": "7d003cdd8f98db2469d8633ba1d07aa5",
+      "newGuid": "3ac7777ede1549b8ad0753205d7dee10"
+    },
+    {
+      "oldGuid": "2f69c776023d853438ec2091ca903226",
+      "newGuid": "a6b8cd836c1b41789c7a0fb65468f348"
+    },
+    {
+      "oldGuid": "4a1c999b5ad2fed478842d4c86655822",
+      "newGuid": "c34160e8453540b5b16991098c391d07"
+    },
+    {
+      "oldGuid": "0e46ae6ce062e46ca84bb02b085aac89",
+      "newGuid": "800669d1c6534e51a7b9f82c50d9e11b"
+    },
+    {
+      "oldGuid": "ea54a1aa7ae62458b892c6302b22b8e3",
+      "newGuid": "a13e1b1d680c4e31af771647d9cff747"
+    },
+    {
+      "oldGuid": "902c7d09dd4984456b3aa6d40d55ae11",
+      "newGuid": "d0fea661df9f4f83a2f8b0b8f6b01f10"
+    },
+    {
+      "oldGuid": "3b6ad3d083842466baaf5f9f0aca8748",
+      "newGuid": "0f9aeeece7ba4154b3000d15236fcb10"
+    },
+    {
+      "oldGuid": "1b8f30bf464ee4f8db9292d5d191bb11",
+      "newGuid": "3b15a82d6b8547fdbbc58d7d9b548b39"
+    },
+    {
+      "oldGuid": "eb3294940308d9349806fd4e728f8dc7",
+      "newGuid": "e90a6e6fff1e432484a35c5a6e2fce1c"
+    },
+    {
+      "oldGuid": "02ce152974d45c74cb4132b6401411fb",
+      "newGuid": "f2eb8ed7561b4c3db0fc838e9074d7c2"
+    },
+    {
+      "oldGuid": "3cc215c1aef76e749882db5566999c3c",
+      "newGuid": "aafb050573bd40d89a577222777f4cf0"
+    },
+    {
+      "oldGuid": "ab557b1369c31644b84f7c371d55ce06",
+      "newGuid": "ac48d5c71c5d4f0eb789443fa290d6e1"
+    },
+    {
+      "oldGuid": "f82332401edfe7b4c8b8674c2927a6bb",
+      "newGuid": "bc10f1e564f1436fbeb4fe1359d27603"
+    },
+    {
+      "oldGuid": "4fbc86116c3eb5c45962c6771c498109",
+      "newGuid": "eb867de1eddd434fb19d760be249a02d"
+    },
+    {
+      "oldGuid": "da2684650d1415c45a00ff133c194135",
+      "newGuid": "8c25e034c50947abbd486d890210323e"
+    },
+    {
+      "oldGuid": "941b0c6575b5549478f64d1b087c1beb",
+      "newGuid": "8d8abf7c6f08496aa82a8bc1359adc09"
+    },
+    {
+      "oldGuid": "6975cbe4c0cc1af4787f58a6a5b3f0b6",
+      "newGuid": "54c948ac44fe4afe8cfc6261cf5bd00c"
+    },
+    {
+      "oldGuid": "9e3afc8d118eb4f4396ac8999165825a",
+      "newGuid": "dab4405f1fe14ea197e09bca02e8b537"
+    },
+    {
+      "oldGuid": "4aa4cb9205ea959458dc5551e8528d39",
+      "newGuid": "92a948cb4287478286af343253dca886"
+    },
+    {
+      "oldGuid": "cabbb405929d02f46a269b78750a4431",
+      "newGuid": "b4e4ffbabc974b178af4dbc104ad0d6c"
+    },
+    {
+      "oldGuid": "d1125bbb691fbd244bd4d1310c590af2",
+      "newGuid": "f297feb9e1f2408a91e19b1592e40db8"
+    },
+    {
+      "oldGuid": "7252d3254f454b644ad07187eb8c90c6",
+      "newGuid": "561d4bb9cf294942b11c1954ab4d28e1"
+    },
+    {
+      "oldGuid": "9fb892aea16040b45985976c5cf3d537",
+      "newGuid": "10915e14102940508d30a6ddf37d8a60"
+    },
+    {
+      "oldGuid": "f8aabab5ddc74a941b9aea90e5f954d3",
+      "newGuid": "3c1e64e4f60545478f4660538f814c5a"
+    },
+    {
+      "oldGuid": "63d71df92ff7f3f4da39198d6856a897",
+      "newGuid": "dc8c427ccd1b4ae49e512508c8d1b8f9"
+    },
+    {
+      "oldGuid": "838ea3643c7d67146b41a9e1fa401539",
+      "newGuid": "a46fbfe09bd246209e732f568d5a938c"
+    },
+    {
+      "oldGuid": "9e30dc2d77910c946bba8948d6380f8d",
+      "newGuid": "542c22de51ed4857b166a36b6924fe24"
+    },
+    {
+      "oldGuid": "5c11e0ccac9d7df4f87c21d17f766823",
+      "newGuid": "cb4e5722f2c6481bb811be9196d861f1"
+    },
+    {
+      "oldGuid": "248681f77745b7e4ca20ce35555d2847",
+      "newGuid": "3dcb76bd5a4f407287a8d6f6edff4f8a"
+    },
+    {
+      "oldGuid": "e1dff9312b4eecc4488a2cff927ed188",
+      "newGuid": "23a99cb1664247e584d53472324ef30f"
+    },
+    {
+      "oldGuid": "02dbf4e5f57da364293b9262ad4979fd",
+      "newGuid": "98dbbcecfe424b73abbe810438cd9b5a"
+    },
+    {
+      "oldGuid": "bc8eadef1bb7e4449945c5f2676f0323",
+      "newGuid": "b12c5156082c4ab985b18a8fc4980722"
+    },
+    {
+      "oldGuid": "6d89795a0d1c8414bb2295866064f88c",
+      "newGuid": "f760b730dc7c4e2f9313bd49037115dd"
+    },
+    {
+      "oldGuid": "01cd46b264a43484aabddfb8126f659f",
+      "newGuid": "c807f149ff244b7b90bea37ee8a78400"
+    },
+    {
+      "oldGuid": "b9d711dbc96f3444eb2071998c8b2cd3",
+      "newGuid": "ac5381435c4e4ac6af31053b94f19cec"
+    },
+    {
+      "oldGuid": "eb45190fd60f96345b2928571e93450d",
+      "newGuid": "2768bcd3bf4849eea12d9c3f9258e32a"
+    },
+    {
+      "oldGuid": "8dbc9ff58fdf17946983f5ee647677e8",
+      "newGuid": "349d2ddf808443bdaa7186ba916a6d4d"
+    },
+    {
+      "oldGuid": "b2d1841c43346f444b11565b04871f9b",
+      "newGuid": "de8218f0ed0e479695d89d59c4aa0d43"
+    },
+    {
+      "oldGuid": "ca487c03063054e16b4f2282ba689c57",
+      "newGuid": "d13dfaefe78b4e3f9bf5e6e596cecd68"
+    },
+    {
+      "oldGuid": "18a4871e8614d344f927978fad00f73a",
+      "newGuid": "967b411e02b94a5cbd7b73f80b26dce6"
+    },
+    {
+      "oldGuid": "f55c35fb07b3d0449a00b1df471fed86",
+      "newGuid": "32ae6892155c49eda0c86f3c647b6d41"
+    },
+    {
+      "oldGuid": "d1f7163e3fc0b8d44890e2f98d8fe37d",
+      "newGuid": "2abfc6c25e064caf82ba925574c25ce1"
+    },
+    {
+      "oldGuid": "33840be85b66ba54fa3af563ba62a898",
+      "newGuid": "849b6babf40241a7b5d1d9a9ed4b854c"
+    },
+    {
+      "oldGuid": "2cb3f8ba8d2e77b4b951c682c013fcb3",
+      "newGuid": "0e87ae667b4c403dbeb5f71bc4256b7e"
+    },
+    {
+      "oldGuid": "138a635d5520b314eaa43c23efa0da43",
+      "newGuid": "1888d6ebc048488e903c53cbbf0b68df"
+    },
+    {
+      "oldGuid": "41bec729d27d26e4087457e920678b01",
+      "newGuid": "91ddc628732f4299a5b2471bfb6bc80e"
+    },
+    {
+      "oldGuid": "8831487555e75ad449f1e2e7a7c2cf72",
+      "newGuid": "a9a1bf4fd13c4d4aa52620ff94b8d833"
+    },
+    {
+      "oldGuid": "2256fa8c5ef7ae7438fae6e46df54088",
+      "newGuid": "a56a9176ede640ec80db0366d021a9e8"
+    },
+    {
+      "oldGuid": "b8fd3a25f33354d4095dc901ce4338fc",
+      "newGuid": "88ead6ede86742419e1fbff703abb518"
+    },
+    {
+      "oldGuid": "8f589e89619bd4441be0666c3b25079e",
+      "newGuid": "bc4c7af3cd2b41eab8644e0b2152317d"
+    },
+    {
+      "oldGuid": "9379ba894adfe4c9d8100eff3da968ec",
+      "newGuid": "1bfd35312495403a9fc53ca6c55ee416"
+    },
+    {
+      "oldGuid": "f12081ce7ddeca4469d6bc35e9d6765c",
+      "newGuid": "3631442919354773a143b1d232a625da"
+    },
+    {
+      "oldGuid": "8658c8a69919a8848b9bd95f52e3a26e",
+      "newGuid": "9203732b8d0549b78dda53d1cf257dcf"
+    },
+    {
+      "oldGuid": "adb033bec1fb8414a8808b4f57e9939c",
+      "newGuid": "9a44efb9a59f46b2ab2e82ab38df6c51"
+    },
+    {
+      "oldGuid": "1ea688f6a3c63c34f8d9ab5b282fce61",
+      "newGuid": "e2926fe0d18548d6994bfdd10e67f982"
+    },
+    {
+      "oldGuid": "c58b116eca3a3420081683f1eee60efc",
+      "newGuid": "1e6fd67af84b481c9f251b9b8fa4d299"
+    },
+    {
+      "oldGuid": "0eb50eb309231ee438465a37e8c64f73",
+      "newGuid": "bcbb75e1b5e94021aa92ddc0815b7d24"
+    },
+    {
+      "oldGuid": "354911ffc84f0334f99f8030ac53981e",
+      "newGuid": "8a81f1a83e3342cfa3b9ab95b2cc986e"
+    },
+    {
+      "oldGuid": "3be8d5b0407f2434dbb149678add7cd7",
+      "newGuid": "e7d80c3f55574ca596ff255bf03c3a3e"
+    },
+    {
+      "oldGuid": "791eda99ea179451a9c4939fe6a096a6",
+      "newGuid": "8b4cde74e3334c8ebe8852e115c377f7"
+    },
+    {
+      "oldGuid": "e1b39260f21ab4e9ba7f8809928ed367",
+      "newGuid": "5e0162d638bb4161b3df507174162f15"
+    },
+    {
+      "oldGuid": "638b71efe87cc4e18a06fabc8b8f643b",
+      "newGuid": "e21db1a3c4d74268b907e244ba895e33"
+    },
+    {
+      "oldGuid": "1bd0fc39f2f541289e965666231292e5",
+      "newGuid": "b9afc516ef984332a94e5902e1b0aa4f"
+    },
+    {
+      "oldGuid": "b581a3ef43fbb9146a6c435bae85416d",
+      "newGuid": "f31342edc10e4fb6b2d586d7a2971222"
+    },
+    {
+      "oldGuid": "66f558aa416a6cd4ba892918f0203f23",
+      "newGuid": "3e76e03b9f3941cbb78a79c1d7dc49b7"
+    },
+    {
+      "oldGuid": "55538c4dff6de8a44a88ad783fe1b828",
+      "newGuid": "697f7b6489e6463c941086e42c0bbfd8"
+    },
+    {
+      "oldGuid": "9d28dc5cb0883ca40b8c404c84bb7d3c",
+      "newGuid": "ddf79d73a8b541f7a8a30b6c3f36399c"
+    },
+    {
+      "oldGuid": "9acc2a6fc0a5d1e48977f67e8047c369",
+      "newGuid": "9a605a3f0f104262a88146d031fcca35"
+    },
+    {
+      "oldGuid": "6471c775e26176643b0edeb33ff040d5",
+      "newGuid": "868dcd4bc76044f1b466562a3a5df25e"
+    },
+    {
+      "oldGuid": "db3d66508c1b10b4e957a0b962491835",
+      "newGuid": "2d36b8997275420c89f3b41dd04d5dfb"
+    },
+    {
+      "oldGuid": "c7cdf1c0bb1fcb242875b2191becab9e",
+      "newGuid": "739e3102398349438c1bcc88a1d24e61"
+    },
+    {
+      "oldGuid": "3807d3c2cd479ff45b65d8f9745121d7",
+      "newGuid": "22c7702ec3ee4d74ad7f0d4837af2ea4"
+    },
+    {
+      "oldGuid": "838dd349600001b4b84492947aeba2aa",
+      "newGuid": "6ef0c38f84d84e6bade16efb0ab061a7"
+    },
+    {
+      "oldGuid": "6d1584412ccb1114eab43e7aee545a8a",
+      "newGuid": "914630edd6bd4be191028690ddfc8712"
+    },
+    {
+      "oldGuid": "c2f7e62dbbb1d8341b3b6819e4fe7d33",
+      "newGuid": "0fef4d11623c4b6aae65da0f3c210f55"
+    },
+    {
+      "oldGuid": "297d971baca85c54bbb5725f3a562dca",
+      "newGuid": "5214fdcb7e9f416f9cc26a4a886db64e"
+    },
+    {
+      "oldGuid": "55cdbf7fb6408094eb22eead5a76480f",
+      "newGuid": "0b948c3574a04f9ea597528a09693dce"
+    },
+    {
+      "oldGuid": "45987d93bbeb1e149a0f99ff8a5709af",
+      "newGuid": "f0f978ab98ae48a0bfbdaae0a4481afd"
+    },
+    {
+      "oldGuid": "491eff0ad94f64f48a56eee61db54b1a",
+      "newGuid": "9be0f7a6135f48e5b0bc0e3377b1aa13"
+    },
+    {
+      "oldGuid": "11c41e7d3eb0d92458efa43912024564",
+      "newGuid": "3958b8e96df04c6685f5ccbee6cefcd2"
+    },
+    {
+      "oldGuid": "b88522dd49db484438a92cbf749d751f",
+      "newGuid": "a4146793fd214be990521c044019698a"
+    },
+    {
+      "oldGuid": "13174d37a0156ff429bb973784597a09",
+      "newGuid": "1d6486f3347340c9a924172639c1b12e"
+    },
+    {
+      "oldGuid": "0df319f6076ae554898e4dbb5f413056",
+      "newGuid": "26cb2c1493454025b669b0c6c5c5ca27"
+    },
+    {
+      "oldGuid": "11c0ae5e077d61f4ebf7aa6ea9edb75c",
+      "newGuid": "0780f33beee84808aba1bf6f932a3d34"
+    },
+    {
+      "oldGuid": "28d10a7e2cb0ae14187903d6b49a61dd",
+      "newGuid": "66add086c06640dfb96a5225d44aec51"
+    },
+    {
+      "oldGuid": "67a7f84b3abc9a341b0f09add53fd500",
+      "newGuid": "ec89a188fd2a4760b4a4a17ee1820f6c"
+    },
+    {
+      "oldGuid": "807c56b3b8e2dfa48b7618836b89ae32",
+      "newGuid": "3572fdb60cd34935910ecd76ac700856"
+    },
+    {
+      "oldGuid": "51efcee107e6435418e302acf65ed6bc",
+      "newGuid": "5807e0bf3dc249bba17536d6af791cb8"
+    },
+    {
+      "oldGuid": "c11cc6a494512bd4fa9ad2d24a9803ce",
+      "newGuid": "7a1eb173f3b846ac9c658747b86415b6"
+    },
+    {
+      "oldGuid": "41d3dcce3dbb8254fa184d41e74a1b1b",
+      "newGuid": "3b0f88c4d5bc4d519daf4a5e7d826dee"
+    },
+    {
+      "oldGuid": "e72db971ab76bc345b44cdfa96d1cbd7",
+      "newGuid": "20e3a6ab2d3a4aeca5295f27d321c11a"
+    },
+    {
+      "oldGuid": "1da5f05803a7ba8488e96ff73065e0ac",
+      "newGuid": "28d45da8d4b148f8bae71427aa18dad1"
+    },
+    {
+      "oldGuid": "84d1837ba3251d942abc9899da55f6c5",
+      "newGuid": "e4fb49f1a9b748779f786a22044d393d"
+    },
+    {
+      "oldGuid": "9833060e410100e4386779af3047c7d7",
+      "newGuid": "6e9b7140277042dcb66c9a389d3cc503"
+    },
+    {
+      "oldGuid": "2f9f20a220943ee4587b2d0a61b47bb2",
+      "newGuid": "6c79831f51734790833fbe61af55b148"
+    },
+    {
+      "oldGuid": "bb351ddac2a18d94a8d5eef862b2a537",
+      "newGuid": "f7b8f3294f164bbe93db2786358f5dfe"
+    },
+    {
+      "oldGuid": "197cd50bd2116b34bb20d0d56bdd5a06",
+      "newGuid": "be3bfe1eab3a44298c4ce778dba84e9e"
+    },
+    {
+      "oldGuid": "34663d6b5ebf0844ebaa5ab891ed6065",
+      "newGuid": "59177affbc17491f87e3f8be2162b36c"
+    },
+    {
+      "oldGuid": "866f0db3795ab76449884a45640105cd",
+      "newGuid": "a90bc82344b44084b19f52d86178f9d2"
+    },
+    {
+      "oldGuid": "d537e252553f8694c973676e01ed4c9e",
+      "newGuid": "ac4cf7649a5740b1a5f1cb3b51a7a72b"
+    },
+    {
+      "oldGuid": "e626c20241795964ea8cb3fdef3dc0ce",
+      "newGuid": "598c6d886c464e189a36278fd0655104"
+    },
+    {
+      "oldGuid": "287cc7ca7ca9c6c40a13214f44b75771",
+      "newGuid": "094fd3b329af44aaa7e091df7711a241"
+    },
+    {
+      "oldGuid": "02089d8efb0850d42b6654ad51e8edd3",
+      "newGuid": "84d7a761a6254d5f95200ab976fe8afe"
+    },
+    {
+      "oldGuid": "99ee257a38c95bb4395e365246e0bb83",
+      "newGuid": "711b7e9b92294930a78c1e9f3791c86c"
+    },
+    {
+      "oldGuid": "da3bc50be930bca40976c733c741138b",
+      "newGuid": "af2dc3542e164f98bf02232c401d6767"
+    },
+    {
+      "oldGuid": "57c71a8ad9d41b14da17324e9b731920",
+      "newGuid": "bd8159404ecd4f4cbfe98d40de161c66"
+    },
+    {
+      "oldGuid": "a2855abd48bd519488d5fb0d225e147d",
+      "newGuid": "f8d6e68ccf83403b985da754a92baf58"
+    },
+    {
+      "oldGuid": "3b1cf4f1cc1bfc04b93b1e6e7a755ef5",
+      "newGuid": "0828ad1258154a62bf238b2644e67186"
+    },
+    {
+      "oldGuid": "6883bacb22e37f04985c602cbb10339a",
+      "newGuid": "f454c7f049974d6f9376e6e5f9743359"
+    },
+    {
+      "oldGuid": "1d6c37a271603924793fd9dfe9513834",
+      "newGuid": "e3826caf0706423c863b110dd921eb0d"
+    },
+    {
+      "oldGuid": "9969cdbdf2d6faa4687ede99116674eb",
+      "newGuid": "93fe4f25292146eaadeb1314efb1c7d6"
+    },
+    {
+      "oldGuid": "2904b99095182fc479e8fb912c96e47e",
+      "newGuid": "2911d0e85fad42d78b1fc4a9e8b8eb42"
+    },
+    {
+      "oldGuid": "6db586164cb60164684f9f851695b671",
+      "newGuid": "d0d4eb1bfb074d8ba1b6e77a97483e53"
+    },
+    {
+      "oldGuid": "b33d1c19a4ec50a438a1a90ed2c7df47",
+      "newGuid": "335a636efad94161bd6555908cfd2615"
+    },
+    {
+      "oldGuid": "3cfab1cb47577c34b8f29e6fafd8a403",
+      "newGuid": "7c6e9d4abb2f4f349ea0923a794a3307"
+    },
+    {
+      "oldGuid": "de3c1eb06102d6a4f8d19cbb3e89947d",
+      "newGuid": "65df9cd8d790489aa15b92555a24dcc0"
+    },
+    {
+      "oldGuid": "53717524e186c0a479dfc92c73a9c3a3",
+      "newGuid": "54a2c210f05c4262bf411cd23af7fe45"
+    },
+    {
+      "oldGuid": "85b0e62d5ce7ae74189adbcedd1faaa8",
+      "newGuid": "003fc8f785ff4db79363c7eb171f3007"
+    },
+    {
+      "oldGuid": "ca8a4f202fb2863468e8ae96336ec230",
+      "newGuid": "cf3e41d5e84d4ecd81d9921d2a302e1d"
+    },
+    {
+      "oldGuid": "66fcae9207f146d479664c18144c8221",
+      "newGuid": "fc65e14916fd4253bfa0fd1792534f3d"
+    },
+    {
+      "oldGuid": "f083222918fd5bf4bb6cc597699e442b",
+      "newGuid": "361237e3ace3401bb6b7e71112932d48"
+    },
+    {
+      "oldGuid": "7a43c68992398104cbc85da0a75b66a3",
+      "newGuid": "7c7692571df041b8bac11fb581dee503"
+    },
+    {
+      "oldGuid": "a98a0280ac42afe4193701a181c18743",
+      "newGuid": "bee82df395d24c06929a1190ada16311"
+    },
+    {
+      "oldGuid": "360ef7e0f466c31439c33f6ecdc0d3c6",
+      "newGuid": "7b86e29e04c74a9aa9efc027180cb3b4"
+    },
+    {
+      "oldGuid": "aad74afa0f3a8734fadf14d8fada2f04",
+      "newGuid": "0630862ad55a4d808f5ecc21c3cc652b"
+    },
+    {
+      "oldGuid": "f8dbd3cc48269bb4492d22910f1c58da",
+      "newGuid": "6d322845ff3347d5aa9bf8c9fa42787c"
+    },
+    {
+      "oldGuid": "170991ad847ce0144a59c7e093253e81",
+      "newGuid": "e592d02046d34748bf5bd3609342233a"
+    },
+    {
+      "oldGuid": "0adaf93f6be759e449af105628b57182",
+      "newGuid": "26104a834d054421a402cc98f5d413ff"
+    },
+    {
+      "oldGuid": "c6ff2f09d66c48d4e984bfe45396897c",
+      "newGuid": "4aa51eb7bc6c417fa1d59908d89f9ba9"
+    },
+    {
+      "oldGuid": "12d1009e22bcc8d48b3c2c2bd08a9837",
+      "newGuid": "90e1c0a159144988ad1a1641f1eb98e5"
+    },
+    {
+      "oldGuid": "bd5191f6d61e52b40a46f687c883f200",
+      "newGuid": "26a2f4bef4144dde997e3e5283f2950e"
+    },
+    {
+      "oldGuid": "87a4a74ca1462be4ab4304ae8bc7b19a",
+      "newGuid": "5a2e7628de144c3cbd99d43f630e6e2e"
+    },
+    {
+      "oldGuid": "15aae020cab50914aaeb10255d31c948",
+      "newGuid": "dcc38319066246188d5d6f30f673f5be"
+    },
+    {
+      "oldGuid": "59990e16f29ec174ab172b96ef4e9593",
+      "newGuid": "a47beac223cd4a3eb5a83578af6c97d5"
+    }
+  ],
+  "fullFolderMetas": [
+    {
+      "relativePath": "Assets/PyroDuck/EggHeads.meta",
+      "text": "fileFormatVersion: 2\nguid: 59990e16f29ec174ab172b96ef4e9593\nfolderAsset: yes\nDefaultImporter:\n  externalObjects: {}\n  userData: \n  assetBundleName: \n  assetBundleVariant: \n"
+    },
+    {
+      "relativePath": "Assets/PyroDuck/EggHeads/Runtime.meta",
+      "text": "fileFormatVersion: 2\nguid: 70cf7a4974ee709408f937533d4403c6\nfolderAsset: yes\nDefaultImporter:\n  externalObjects: {}\n  userData: \n  assetBundleName: \n  assetBundleVariant: \n"
+    },
+    {
+      "relativePath": "Assets/PyroDuck/EggHeads/Editor.meta",
+      "text": "fileFormatVersion: 2\nguid: a9781e5edefe255469438595e658e56a\nfolderAsset: yes\nDefaultImporter:\n  externalObjects: {}\n  userData: \n  assetBundleName: \n  assetBundleVariant: \n"
+    }
+  ],
+  "coreEditorAssembly": "{\n    \"name\": \"com.pyroduck.eggheads.Editor\",\n    \"rootNamespace\": \"com.pyroduck.eggheads.Editor\",\n    \"references\": [\n        \"Unity.TextMeshPro\",\n        \"Unity.TextMeshPro.Editor\",\n        \"com.pyroduck.eggheads.Runtime\"\n    ],\n    \"includePlatforms\": [\n        \"Editor\"\n    ],\n    \"excludePlatforms\": [],\n    \"allowUnsafeCode\": false,\n    \"overrideReferences\": false,\n    \"precompiledReferences\": [],\n    \"autoReferenced\": true,\n    \"defineConstraints\": [],\n    \"versionDefines\": [],\n    \"noEngineReferences\": false\n}",
+  "coreEditorAssemblyMeta": "fileFormatVersion: 2\nguid: f72bc52f450979f49b1a8387e2062724\nAssemblyDefinitionImporter:\n  externalObjects: {}\n  userData: \n  assetBundleName: \n  assetBundleVariant: \n"
+}

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9593ec4516de9fc4b818153fb7be61d9, type: 3}
   m_Name: Hat_0
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualDataSO
   Name: Hat_
   BodyPartPrefab: {fileID: 1774262170037143468, guid: 3b1acb585ac230f449c19afaa4bb02b0, type: 3}
   IconSprite: {fileID: 2617494491047411783, guid: c05e888e27acb0e49abf0f6b0a223c96, type: 3}

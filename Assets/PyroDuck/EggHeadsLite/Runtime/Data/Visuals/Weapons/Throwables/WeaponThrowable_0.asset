@@ -11,8 +11,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9593ec4516de9fc4b818153fb7be61d9, type: 3}
   m_Name: WeaponThrowable_0
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualDataSO
   Name: WeaponThrowable_0
-  BodyPartPrefab: {fileID: 586303462464216240, guid: 41d3dcce3dbb8254fa184d41e74a1b1b, type: 3}
+  BodyPartPrefab: {fileID: 586303462464216240, guid: 3b0f88c4d5bc4d519daf4a5e7d826dee, type: 3}
   IconSprite: {fileID: -2370617602109127192, guid: 1353fbb9d0777084c8f07f4dbe61a112, type: 3}
   isColorable: 0

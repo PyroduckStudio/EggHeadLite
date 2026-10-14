@@ -4,7 +4,9 @@
     "references": [
         "Unity.TextMeshPro",
         "Unity.TextMeshPro.Editor",
-        "com.pyroduck.eggheadslite.Runtime"
+        "com.pyroduck.eggheads.Runtime",
+        "com.pyroduck.eggheads.Editor",
+        "com.pyroduck.eggheadslite.rendering.Runtime"
     ],
     "includePlatforms": [
         "Editor"

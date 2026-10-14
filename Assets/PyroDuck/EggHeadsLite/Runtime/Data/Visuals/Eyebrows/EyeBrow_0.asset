@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9593ec4516de9fc4b818153fb7be61d9, type: 3}
   m_Name: EyeBrow_0
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualDataSO
   Name: EyeBrow_0
   BodyPartPrefab: {fileID: 4340538795819724014, guid: 598af1be06af6204785762d9635ec47c, type: 3}
   IconSprite: {fileID: 2192378353078273719, guid: 1353fbb9d0777084c8f07f4dbe61a112, type: 3}

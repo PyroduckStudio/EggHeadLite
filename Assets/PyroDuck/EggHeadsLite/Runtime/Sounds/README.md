@@ -38,8 +38,8 @@ matching `SoundEntry` to the `AudioLibrary.asset`.
 Playback from anywhere:
 
 ```csharp
-using com.pyroduck.eggheadslite.Runtime.Scripts.Audio;
-using com.pyroduck.eggheadslite.Runtime.Scripts.Events;
+using com.pyroduck.eggheads.Runtime.Scripts.Audio;
+using com.pyroduck.eggheads.Runtime.Scripts.Events;
 
 EventManager.Publish(new PlaySoundEvent   { Id = SoundId.ProjectileFire });
 EventManager.Publish(new PlaySoundAtEvent { Id = SoundId.MeleeImpact, Position = hitPos });

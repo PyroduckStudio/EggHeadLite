@@ -11,9 +11,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2105c67117bf439e99b32b3a31701e5e, type: 3}
   m_Name: WeaponsRangedVisuals
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualGroupsDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualGroupsDataSO
   Name: Weapons/Ranged
   IsSubGroup: 1
   VisualList:
-  - {fileID: 11400000, guid: 0adaf93f6be759e449af105628b57182, type: 2}
+  - {fileID: 11400000, guid: 26104a834d054421a402cc98f5d413ff, type: 2}
   VisualType: 6

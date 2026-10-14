@@ -11,9 +11,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2105c67117bf439e99b32b3a31701e5e, type: 3}
   m_Name: WeaponsThrowablesVisuals
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualGroupsDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualGroupsDataSO
   Name: Weapons/Throwables
   IsSubGroup: 1
   VisualList:
-  - {fileID: 11400000, guid: c6ff2f09d66c48d4e984bfe45396897c, type: 2}
+  - {fileID: 11400000, guid: 4aa51eb7bc6c417fa1d59908d89f9ba9, type: 2}
   VisualType: 6

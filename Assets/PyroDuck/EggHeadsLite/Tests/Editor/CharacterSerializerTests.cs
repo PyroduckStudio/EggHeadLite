@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using com.pyroduck.eggheadslite.Runtime.Scripts.Data;
+using com.pyroduck.eggheads.Runtime.Scripts.Data;
 using NUnit.Framework;
 
 namespace com.pyroduck.eggheadslite.Tests.Editor

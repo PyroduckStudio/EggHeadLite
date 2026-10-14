@@ -364,21 +364,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cd9679d9c75df4daf3dc53f389e8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  equipSound: {fileID: 8300000, guid: 3be8d5b0407f2434dbb149678add7cd7, type: 3}
-  dropSound: {fileID: 8300000, guid: 3be8d5b0407f2434dbb149678add7cd7, type: 3}
+  equipSound: {fileID: 8300000, guid: e7d80c3f55574ca596ff255bf03c3a3e, type: 3}
+  dropSound: {fileID: 8300000, guid: e7d80c3f55574ca596ff255bf03c3a3e, type: 3}
   hitSound: {fileID: 8300000, guid: b53ddb30b7796d648a9c87f1531ddd50, type: 3}
   audioSource: {fileID: 3600752867710518475}
   attackCooldown: 0.2
-  fireSound: {fileID: 8300000, guid: e1b39260f21ab4e9ba7f8809928ed367, type: 3}
-  recoilSound: {fileID: 8300000, guid: 638b71efe87cc4e18a06fabc8b8f643b, type: 3}
+  fireSound: {fileID: 8300000, guid: 5e0162d638bb4161b3df507174162f15, type: 3}
+  recoilSound: {fileID: 8300000, guid: e21db1a3c4d74268b907e244ba895e33, type: 3}
   recoilAudioSource: {fileID: 5607773107481988489}
   recoilSoundDelay: 0.06
   rangedType: 0
   rangedAutomaticFire: 0
   shotgunPelletCount: 1
   projectileDamage: 10
-  projectilePrefab: {fileID: 2584344141586220939, guid: 11c41e7d3eb0d92458efa43912024564, type: 3}
+  projectilePrefab: {fileID: 2584344141586220939, guid: 3958b8e96df04c6685f5ccbee6cefcd2, type: 3}
   muzzlePlace: {fileID: 5891854210229761180}
-  muzzleParticle: {fileID: 1442126558206504316, guid: 297d971baca85c54bbb5725f3a562dca, type: 3}
+  muzzleParticle: {fileID: 1442126558206504316, guid: 5214fdcb7e9f416f9cc26a4a886db64e, type: 3}
   recoilDuration: 0.2
   maxRecoilDistance: 0.15

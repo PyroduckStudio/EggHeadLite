@@ -1547,13 +1547,13 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -1547176320597772555, guid: 1ea688f6a3c63c34f8d9ab5b282fce61, type: 3}
-    - sprite: {fileID: 704008076787280386, guid: 1ea688f6a3c63c34f8d9ab5b282fce61, type: 3}
-    - sprite: {fileID: 8128741556237572025, guid: 1ea688f6a3c63c34f8d9ab5b282fce61, type: 3}
-    - sprite: {fileID: -8874791883430034118, guid: 1ea688f6a3c63c34f8d9ab5b282fce61, type: 3}
-    - sprite: {fileID: -4875228564994957918, guid: 1ea688f6a3c63c34f8d9ab5b282fce61, type: 3}
-    - sprite: {fileID: 4387175879446859961, guid: 1ea688f6a3c63c34f8d9ab5b282fce61, type: 3}
-    - sprite: {fileID: -5943586592871994690, guid: 1ea688f6a3c63c34f8d9ab5b282fce61, type: 3}
+    - sprite: {fileID: -1547176320597772555, guid: e2926fe0d18548d6994bfdd10e67f982, type: 3}
+    - sprite: {fileID: 704008076787280386, guid: e2926fe0d18548d6994bfdd10e67f982, type: 3}
+    - sprite: {fileID: 8128741556237572025, guid: e2926fe0d18548d6994bfdd10e67f982, type: 3}
+    - sprite: {fileID: -8874791883430034118, guid: e2926fe0d18548d6994bfdd10e67f982, type: 3}
+    - sprite: {fileID: -4875228564994957918, guid: e2926fe0d18548d6994bfdd10e67f982, type: 3}
+    - sprite: {fileID: 4387175879446859961, guid: e2926fe0d18548d6994bfdd10e67f982, type: 3}
+    - sprite: {fileID: -5943586592871994690, guid: e2926fe0d18548d6994bfdd10e67f982, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4913,8 +4913,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7cdc04759b384f90af630879610ccd7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Pool.ExplosionEffect
-  explosionSound: {fileID: 8300000, guid: 791eda99ea179451a9c4939fe6a096a6, type: 3}
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Pool.ExplosionEffect
+  explosionSound: {fileID: 8300000, guid: 8b4cde74e3334c8ebe8852e115c377f7, type: 3}
   audioSource: {fileID: 6307467342223279000}
 --- !u!82 &6307467342223279000
 AudioSource:

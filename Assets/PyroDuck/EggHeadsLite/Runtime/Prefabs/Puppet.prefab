@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c973bc624f24c339d099289f03642a6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Combat.PuppetActionChecker
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Combat.PuppetActionChecker
   parent: {fileID: 2610202277775134222}
 --- !u!233 &3633009194824491492
 HingeJoint2D:
@@ -527,7 +527,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 9115083180326498312, guid: c58b116eca3a3420081683f1eee60efc, type: 3}
+  m_Sprite: {fileID: 9115083180326498312, guid: 1e6fd67af84b481c9f251b9b8fa4d299, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2cdfffe869849adab52ec2bce8c4aa8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Combat.PuppetController
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Combat.PuppetController
   actionChecker: {fileID: 2600266169434655489}
   spriteRenderer: {fileID: 3348826744128573635}
 --- !u!1 &3643801122852590956

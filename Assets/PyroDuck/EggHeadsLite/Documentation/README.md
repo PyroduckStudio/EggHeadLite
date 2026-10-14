@@ -1,39 +1,41 @@
 # EggHeads Lite - Modular Character Generator
 
+On first import, the **EggHeads Lite Setup** page opens once per project with
+Generator/demo shortcuts, setup guidance and the Full edition campaign.
+Reopen it from **Tools > PyroDuck > EggHeadsLite > Setup**. Online campaign
+loading can be disabled on the page; bundled content is available offline.
+
 EggHeads Lite is a **free** Unity package for building modular egg-style
 character prefabs from ready-made parts. The supported Lite workflow is editor
 driven: open the generator, choose the visual parts, save a prefab, then use the
 generated prefab in your own scene or register it in the included database.
 
-Package id: `com.pyroduck.eggheadslite`
-
-Namespace root: `com.pyroduck.eggheadslite`
+Shared runtime assembly and namespace: `com.pyroduck.eggheads.Runtime`.
+Lite editor assembly: `com.pyroduck.eggheadslite.Editor`.
 
 ## Lite vs Full
 
-| Feature | Lite (Free) | Full |
-|---------|:-----------:|:----:|
-| Editor prefab generator | âœ“ | âœ“ |
-| Runtime platformer sample | âœ“ | âœ“ |
-| Ready-made characters | 3 | 6+ |
-| Visual parts (eyes / noses / mouths / etc.) | ~21 | 100+ |
-| Weapon prefabs (melee / ranged / throwable) | 1 each | 8â€“10 each |
-| Event-driven audio system | âœ“ | âœ“ |
-| Pre-configured `AudioLibrary` asset | âœ“ | âœ“ |
-| Runtime character creator UI | â€” | âœ“ |
-| Runtime randomisation & colour-wheel | â€” | âœ“ |
-| JSON save/load character config | â€” | âœ“ |
-| URP 2D Lit material upgrader | â€” | âœ“ |
-| Mobile touch-fire controls | â€” | âœ“ |
-| AI / Enemy controllers | â€” | âœ“ |
-| Color picker (wheel + hex input) | â€” | âœ“ |
+Lite includes the editor generator, a starter collection, and a playable platformer sample.
+Full adds an expanded collection, ready-made runtime character creator with color wheel,
+and integrated appearance save/load. Lite contains serializer source; see
+[the migration guide](UpgradeToFull.md) for the supported workflow distinction and transfer steps.
+Check the current product page for released content counts.
 
-> The Lite package identity is `com.pyroduck.eggheadslite`.
-> Do **not** mix it with the full `com.pyroduck.eggheads` package in the same project.
+Compatible Full can be imported into the same project. Older Lite projects must
+run the standalone preparation tool first; see the migration guide.
+
+## Getting started
+
+See [Quick Start](QuickStart.md) for thumbnail browsing, presets, Undo/Redo, setup checks,
+and Generate & Add to Scene. Existing drag-and-drop prefab fields and Generate remain available.
+
+Use **Tools > PyroDuck > Render Pipeline** to configure Built-in, URP 2D or HDRP
+and convert EggHeads stock materials. See [Render pipeline switching](RenderPipelines.md)
+for installation, backups, restore and the limits of automatic conversion.
 
 ## Requirements
 
-- Unity 2022.3 LTS or Unity 6 (targets: 2022.3.23, 6000.3.22f1, 6000.5.8f1)
+- Unity 6.6.4 (6000.6.4f1). This is the editor version the package was last opened and tested in.
 - 2D project setup
 - Unity Input System, TextMesh Pro, and UGUI packages when using the included
   runtime/sample components
@@ -74,9 +76,10 @@ Create these layers in **Edit â†’ Project Settings â†’ Tags & Layers**
    for the included sample UI, and restart the editor if prompted.
 5. Open `Assets/PyroDuck/EggHeadsLite/Samples/Platformer/Scenes/Platformer.unity`.
 
-This distribution lives entirely under `Assets/PyroDuck/EggHeadsLite` and does
-not require a local UPM package reference or package.json. Export this folder
-without **Include dependencies** to avoid bundling unrelated project assets.
+Shared code lives under `Assets/PyroDuck/EggHeads`; Lite content and tools live
+under `Assets/PyroDuck/EggHeadsLite`. Upgrade tooling lives under
+`Assets/PyroDuck/EggHeadsUpgradeTools`. Export all three roots without
+**Include dependencies**. No local UPM reference or package.json is required.
 ProjectSettings are not included; configure the layers below in the target project.
 
 Layer indices used by the included prefabs/scenes: Ground=3, Throwable=6,
@@ -161,8 +164,8 @@ references this asset. To use audio in your own scene:
 3. Play sounds from any script via the event bus:
 
 ```csharp
-using com.pyroduck.eggheadslite.Runtime.Scripts.Audio;
-using com.pyroduck.eggheadslite.Runtime.Scripts.Events;
+using com.pyroduck.eggheads.Runtime.Scripts.Audio;
+using com.pyroduck.eggheads.Runtime.Scripts.Events;
 
 EventManager.Publish(new PlaySoundEvent   { Id = SoundId.ProjectileFire });
 EventManager.Publish(new PlaySoundAtEvent { Id = SoundId.MeleeImpact, Position = hitPos });
@@ -174,7 +177,7 @@ To override a clip, duplicate `AudioLibrary.asset`, open it, and replace the
 ## Adding New Visual Parts
 
 1. Create or import a body-part prefab.
-2. Create a visual data asset from **Create > PyroDuck > EggHeadsLite > Visual Data**.
+2. Create a visual data asset from **Create > PyroDuck > EggHeads > Visual Data**.
 3. Assign the prefab to `BodyPartPrefab`.
 4. Assign `IconSprite` if the part should appear in UI lists.
 5. Enable `isColorable` if the generator should expose a color field.
@@ -183,21 +186,21 @@ To override a clip, duplicate `AudioLibrary.asset`, open it, and replace the
 
 Visual groups can be created from:
 
-**Create > PyroDuck > EggHeadsLite > Visual Group**
+**Create > PyroDuck > EggHeads > Visual Group**
 
 The main database can be created from:
 
-**Create > PyroDuck > EggHeadsLite > EggHead Database**
+**Create > PyroDuck > EggHeads > EggHead Database**
 
 ## Package Layout
 
 ```text
-Assets/PyroDuck/EggHeadsLite
+Assets/PyroDuck/EggHeads
   Editor/                 Generator and database inspector
   Runtime/Data/           EggHeadDatabaseSO, VisualDataSO, VisualGroupsDataSO,
                           AudioLibrary assets
   Runtime/Prefabs/        Character base and modular body-part prefabs
-  Runtime/Scripts/        Runtime controllers and data scripts
+  (Shared scripts are in Assets/PyroDuck/EggHeads/Runtime/Scripts)
   Runtime/Sounds/         Included audio clips
   Runtime/Sprites/        Included sprites
   Samples/Platformer/             Optional sample scene (with AudioManager wired up)
@@ -209,12 +212,12 @@ Assets/PyroDuck/EggHeadsLite
   edited safely in the consuming project.
 - Existing prefab and material references are preserved through Unity `.meta`
   GUIDs.
-- The Lite package identity is `com.pyroduck.eggheadslite`; avoid mixing it with
-  the full EggHeads package in the same project.
+- Shared script identities support compatible Full import in the same project.
+  Older Lite projects must run the preparation tool first.
 
 ## About PyroDuck and Featured Campaigns
 
 Open **Tools > PyroDuck > About Us**, or use **About PyroDuck** in the generator.
 The editor-only window supports a configurable HTTPS campaign feed, a five-second
 carousel with hover pause, scheduling, priority, and offline caching. The feed URL
-is initially empty. See [Campaigns.md](Campaigns.md) for setup and the JSON schema.
+uses the configured PyroDuck endpoint. See [Campaigns.md](Campaigns.md) for setup and the JSON schema.

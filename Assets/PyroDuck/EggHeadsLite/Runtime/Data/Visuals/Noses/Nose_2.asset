@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9593ec4516de9fc4b818153fb7be61d9, type: 3}
   m_Name: Nose_2
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualDataSO
   Name: Nose_2
   BodyPartPrefab: {fileID: 6814594482644620075, guid: a9bbd5b38449a854a903c5a2b9fb2cc7, type: 3}
   IconSprite: {fileID: -1191125873262295075, guid: c05e888e27acb0e49abf0f6b0a223c96, type: 3}

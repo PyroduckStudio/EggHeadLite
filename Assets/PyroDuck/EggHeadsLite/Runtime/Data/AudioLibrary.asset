@@ -11,11 +11,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cca8bb82d8274cdfb0763e898e1a88e, type: 3}
   m_Name: AudioLibrary
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Audio.AudioLibrarySO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Audio.AudioLibrarySO
   entries:
   - Id: 100
     Clips:
-    - {fileID: 8300000, guid: e1b39260f21ab4e9ba7f8809928ed367, type: 3}
+    - {fileID: 8300000, guid: 5e0162d638bb4161b3df507174162f15, type: 3}
     MinVolume: 0.9
     MaxVolume: 1
     MinPitch: 0.95
@@ -37,7 +37,7 @@ MonoBehaviour:
     MinDistance: 1
   - Id: 102
     Clips:
-    - {fileID: 8300000, guid: 791eda99ea179451a9c4939fe6a096a6, type: 3}
+    - {fileID: 8300000, guid: 8b4cde74e3334c8ebe8852e115c377f7, type: 3}
     MinVolume: 0.8
     MaxVolume: 1
     MinPitch: 0.9
@@ -48,7 +48,7 @@ MonoBehaviour:
     MinDistance: 1
   - Id: 200
     Clips:
-    - {fileID: 8300000, guid: f12081ce7ddeca4469d6bc35e9d6765c, type: 3}
+    - {fileID: 8300000, guid: 3631442919354773a143b1d232a625da, type: 3}
     MinVolume: 0.85
     MaxVolume: 1
     MinPitch: 0.95
@@ -70,7 +70,7 @@ MonoBehaviour:
     MinDistance: 1
   - Id: 202
     Clips:
-    - {fileID: 8300000, guid: 791eda99ea179451a9c4939fe6a096a6, type: 3}
+    - {fileID: 8300000, guid: 8b4cde74e3334c8ebe8852e115c377f7, type: 3}
     MinVolume: 0.9
     MaxVolume: 1
     MinPitch: 0.9

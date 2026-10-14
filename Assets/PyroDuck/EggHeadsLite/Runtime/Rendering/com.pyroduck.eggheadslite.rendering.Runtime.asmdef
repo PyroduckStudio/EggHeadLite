@@ -1,0 +1,6 @@
+{
+    "name": "com.pyroduck.eggheadslite.rendering.Runtime",
+    "rootNamespace": "com.pyroduck.eggheadslite.Rendering",
+    "references": [],
+    "autoReferenced": true
+}

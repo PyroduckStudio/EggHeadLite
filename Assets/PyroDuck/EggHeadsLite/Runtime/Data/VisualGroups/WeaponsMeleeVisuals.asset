@@ -11,9 +11,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2105c67117bf439e99b32b3a31701e5e, type: 3}
   m_Name: WeaponsMeleeVisuals
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualGroupsDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualGroupsDataSO
   Name: Weapons/Melee
   IsSubGroup: 1
   VisualList:
-  - {fileID: 11400000, guid: 170991ad847ce0144a59c7e093253e81, type: 2}
+  - {fileID: 11400000, guid: e592d02046d34748bf5bd3609342233a, type: 2}
   VisualType: 6

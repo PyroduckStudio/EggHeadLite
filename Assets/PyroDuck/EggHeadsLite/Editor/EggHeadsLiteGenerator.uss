@@ -16,3 +16,10 @@
 .generator-featured .status { margin-top: 10px; }
 
 .preview-refresh-button { flex-grow: 0; flex-shrink: 0; align-self: flex-end; width: 120px; height: 26px; min-height: 26px; font-size: 11px; margin-top: 8px; margin-right: 0; margin-bottom: 10px; }
+
+.part-grid { flex-direction: row; flex-wrap: wrap; margin-top: 6px; margin-bottom: 10px; }
+.part-tile { width: 92px; height: 92px; margin: 3px; padding: 5px; border-radius: 6px; }
+.part-tile Image { height: 52px; flex-shrink: 0; }
+.part-tile-title { font-size: 10px; white-space: normal; -unity-text-align: middle-center; }
+.part-tile.selected { border-color: rgb(174,226,172); border-width: 2px; }
+.settings-card Foldout { margin-top: 5px; margin-bottom: 8px; }

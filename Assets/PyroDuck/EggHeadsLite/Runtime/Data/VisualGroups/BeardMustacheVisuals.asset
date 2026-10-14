@@ -11,10 +11,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2105c67117bf439e99b32b3a31701e5e, type: 3}
   m_Name: BeardMustacheVisuals
-  m_EditorClassIdentifier: com.pyroduck.eggheadslite.Runtime::com.pyroduck.eggheadslite.Runtime.Scripts.Data.VisualGroupsDataSO
+  m_EditorClassIdentifier: com.pyroduck.eggheads.Runtime::com.pyroduck.eggheads.Runtime.Scripts.Data.VisualGroupsDataSO
   Name: BeardMustache
   IsSubGroup: 0
   VisualList:
-  - {fileID: 11400000, guid: 3b1cf4f1cc1bfc04b93b1e6e7a755ef5, type: 2}
-  - {fileID: 11400000, guid: 6883bacb22e37f04985c602cbb10339a, type: 2}
+  - {fileID: 11400000, guid: 0828ad1258154a62bf238b2644e67186, type: 2}
+  - {fileID: 11400000, guid: f454c7f049974d6f9376e6e5f9743359, type: 2}
   VisualType: 3
